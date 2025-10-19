@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TravelHub - Планувальник подорожей</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">🌍 TravelHub</div>
+        <ul class="nav-menu">
+          <li><a class="nav-link" onclick="showSection('home')">Головна</a></li>
+          <li>
+            <a class="nav-link" onclick="showSection('destinations')"
+              >Напрямки</a
+            >
+          </li>
+          <li>
+            <a class="nav-link" onclick="showSection('planner')"
+              >Планувальник</a
+            >
+          </li>
+          <li>
+            <a class="nav-link" onclick="showSection('my-plans')">Мої плани</a>
+          </li>
+          <li>
+            <a class="nav-link" onclick="showSection('about')">Про нас</a>
+          </li>
+          <li>
+            <a class="nav-link" onclick="showSection('contact')">Контакти</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="hero" id="home-section">
+      <div class="hero-content">
+        <h1>Плануйте подорожі мрії</h1>
+        <p>
+          Відкрийте світ разом з TravelHub. Персоналізовані рекомендації для
+          кожного бюджету
+        </p>
+        <button class="cta-button" onclick="showSection('destinations')">
+          Почати планування
+        </button>
+      </div>
+    </section>
+
+    <section class="section active" id="home">
+      <div class="container">
+        <div class="section-header">
+          <h2>Чому TravelHub?</h2>
+          <p>Ваш надійний помічник у плануванні незабутніх подорожей</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-icon">💰</div>
+            <h3>Для будь-якого бюджету</h3>
+            <p>Від економних до преміум-подорожей. Знайдемо варіанти для вас</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🗺️</div>
+            <h3>Персональні маршрути</h3>
+            <p>Індивідуальні рекомендації місць залежно від ваших уподобань</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3>Зручний планувальник</h3>
+            <p>Збережіть свої плани та керуйте ними в одному місці</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Точні рекомендації</h3>
+            <p>
+              Актуальна інформація про найкращі місця та часи для відвідування
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="destinations">
+      <div class="container">
+        <div class="section-header">
+          <h2>Популярні напрямки</h2>
+          <p>Оберіть країну для детальної інформації</p>
+        </div>
+        <div class="destinations-grid">
+          <div
+            class="destination-card"
+            onclick="showDestinationDetail('japan')"
+          >
+            <div class="card-image japan">🗾</div>
+            <div class="card-content">
+              <h3>Японія</h3>
+              <p>
+                Країна висхідного сонця з унікальною культурою та традиціями
+              </p>
+              <div class="card-tags">
+                <span class="tag">🌸 Сакура</span>
+                <span class="tag">🏯 Храми</span>
+                <span class="tag">🍜 Кухня</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="destination-card"
+            onclick="showDestinationDetail('italy')"
+          >
+            <div class="card-image italy">🇮🇹</div>
+            <div class="card-content">
+              <h3>Італія</h3>
+              <p>Батьківщина мистецтва, історії та неперевершеної кухні</p>
+              <div class="card-tags">
+                <span class="tag">🎨 Мистецтво</span>
+                <span class="tag">🍕 Піца</span>
+                <span class="tag">🏛️ Історія</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="destination-card"
+            onclick="showDestinationDetail('iceland')"
+          >
+            <div class="card-image iceland">🏔️</div>
+            <div class="card-content">
+              <h3>Ісландія</h3>
+              <p>Земля льоду та вогню з неймовірними природними явищами</p>
+              <div class="card-tags">
+                <span class="tag">🌌 Сяйво</span>
+                <span class="tag">🌊 Водоспади</span>
+                <span class="tag">🏔️ Льодовики</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="destination-card"
+            onclick="showDestinationDetail('thailand')"
+          >
+            <div class="card-image thailand">🏝️</div>
+            <div class="card-content">
+              <h3>Таїланд</h3>
+              <p>
+                Тропічний рай з білосніжними пляжами та екзотичною культурою
+              </p>
+              <div class="card-tags">
+                <span class="tag">🏖️ Пляжі</span>
+                <span class="tag">🛕 Храми</span>
+                <span class="tag">🥘 Стріт-фуд</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="destination-detail">
+      <div class="container">
+        <a class="back-btn" onclick="showSection('destinations')">
+          ← Назад до напрямків
+        </a>
+        <div class="detail-header" id="detail-header">
+          <div class="emoji" id="detail-emoji">🗾</div>
+          <h1 id="detail-title">Японія</h1>
+          <p id="detail-description">Країна висхідного сонця</p>
+        </div>
+
+        <div class="slider-container">
+          <div class="slider" id="destination-slider"></div>
+          <button class="slider-btn prev-btn" onclick="moveSlide(-1)">
+            &#10094;
+          </button>
+          <button class="slider-btn next-btn" onclick="moveSlide(1)">
+            &#10095;
+          </button>
+        </div>
+        <div class="section-header" style="margin-top: 4rem">
+          <h2>Оберіть ваш бюджет</h2>
+          <p>Рекомендації будуть адаптовані під ваші можливості</p>
+        </div>
+        <div class="budget-selector">
+          <div class="budget-option" onclick="selectBudget('economy', event)">
+            <div class="budget-icon">💰</div>
+            <h3>Економ</h3>
+            <p class="budget-price">до $1000</p>
+            <p>Бюджетні варіанти для економних мандрівників</p>
+          </div>
+          <div class="budget-option" onclick="selectBudget('standard', event)">
+            <div class="budget-icon">💵</div>
+            <h3>Стандарт</h3>
+            <p class="budget-price">$1000-$3000</p>
+            <p>Комфортна подорож за оптимальною ціною</p>
+          </div>
+          <div class="budget-option" onclick="selectBudget('comfort', event)">
+            <div class="budget-icon">💴</div>
+            <h3>Комфорт</h3>
+            <p class="budget-price">$3000-$5000</p>
+            <p>Підвищений комфорт та унікальні враження</p>
+          </div>
+          <div class="budget-option" onclick="selectBudget('premium', event)">
+            <div class="budget-icon">💎</div>
+            <h3>Преміум</h3>
+            <p class="budget-price">від $5000</p>
+            <p>Розкіш та ексклюзивний сервіс</p>
+          </div>
+        </div>
+        <div class="detail-grid" id="budget-details" style="display: none">
+          <div class="info-card">
+            <h3><span class="icon">📍</span> Що відвідати</h3>
+            <p id="attractions-text"></p>
+          </div>
+          <div class="info-card">
+            <h3><span class="icon">🏨</span> Де зупинитись</h3>
+            <p id="accommodation-text"></p>
+          </div>
+          <div class="info-card">
+            <h3><span class="icon">ℹ️</span> Корисна інформація</h3>
+            <p id="info-text"></p>
+          </div>
+          <div class="info-card">
+            <h3><span class="icon">💡</span> Рекомендації</h3>
+            <p id="tips-text"></p>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem">
+          <button class="cta-button" onclick="showSection('planner')">
+            Створити план подорожі →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="planner">
+      <div class="container">
+        <div class="section-header">
+          <h2>Створіть ваш план подорожі</h2>
+          <p>Заповніть форму для створення персоналізованого плану</p>
+        </div>
+        <div class="contact-form">
+          <form id="plan-form">
+            <div class="form-group">
+              <label>Оберіть країну</label>
+              <select id="plan-country" required>
+                <option value="">-- Оберіть --</option>
+                <option value="japan">🗾 Японія</option>
+                <option value="italy">🇮🇹 Італія</option>
+                <option value="iceland">🏔️ Ісландія</option>
+                <option value="thailand">🏝️ Таїланд</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Бюджет</label>
+              <select id="plan-budget" required>
+                <option value="">-- Оберіть --</option>
+                <option value="economy">💰 Економ (до $1000)</option>
+                <option value="standard">💵 Стандарт ($1000-$3000)</option>
+                <option value="comfort">💴 Комфорт ($3000-$5000)</option>
+                <option value="premium">💎 Преміум (від $5000)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Тривалість подорожі</label>
+              <select id="plan-duration" required>
+                <option value="">-- Оберіть --</option>
+                <option value="weekend">Вихідні (2-3 дні)</option>
+                <option value="week">Тиждень (7 днів)</option>
+                <option value="two-weeks">Два тижні (14 днів)</option>
+                <option value="month">Місяць (30 днів)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Кількість мандрівників</label>
+              <select id="plan-travelers" required>
+                <option value="">-- Оберіть --</option>
+                <option value="solo">Самотня подорож (1 особа)</option>
+                <option value="couple">Пара (2 особи)</option>
+                <option value="family">Сім'я (3-4 особи)</option>
+                <option value="group">Група (5+ осіб)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Дата початку (орієнтовно)</label>
+              <input type="date" id="plan-date" required />
+            </div>
+            <div class="form-group">
+              <label>Ваше ім'я</label>
+              <input
+                type="text"
+                id="plan-name"
+                placeholder="Введіть ваше ім'я"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input
+                type="email"
+                id="plan-email"
+                placeholder="your@email.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Додаткові побажання</label>
+              <textarea
+                id="plan-notes"
+                rows="4"
+                placeholder="Розкажіть про ваші уподобання та інтереси..."
+              ></textarea>
+            </div>
+            <button type="submit" class="submit-btn">
+              Зберегти план подорожі
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="my-plans">
+      <div class="container">
+        <div class="section-header">
+          <h2>Мої плани подорожей</h2>
+          <p>Керуйте вашими збережeними планами</p>
+        </div>
+        <div class="plans-grid" id="plans-container">
+          <div style="text-align: center; padding: 4rem 2rem">
+            <div style="font-size: 4rem; margin-bottom: 1rem">📋</div>
+            <h3 style="margin-bottom: 1rem">
+              У вас ще немає збережених планів
+            </h3>
+            <p style="color: #6b7280; margin-bottom: 2rem">
+              Створіть свій перший план подорожі
+            </p>
+            <button class="cta-button" onclick="showSection('planner')">
+              Створити план
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2>Про TravelHub</h2>
+          <p>Ваш надійний партнер у світі подорожей</p>
+        </div>
+        <div class="about-content">
+          <div class="info-card" style="margin-bottom: 2rem">
+            <h3>Наша місія</h3>
+            <p style="line-height: 1.8">
+              TravelHub створений для того, щоб зробити планування подорожей
+              простим, зручним та доступним для кожного. Ми віримо, що кожна
+              людина заслуговує на незабутні враження від подорожей, незалежно
+              від бюджету.
+            </p>
+          </div>
+          <div class="feature-grid">
+            <div class="feature-card">
+              <div class="feature-icon">🎯</div>
+              <h3>Персоналізація</h3>
+              <p>
+                Кожна рекомендація адаптована під ваші потреби та можливості
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔒</div>
+              <h3>Безпека</h3>
+              <p>Ваші дані надійно захищені та не передаються третім особам</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🌟</div>
+              <h3>Якість</h3>
+              <p>Перевірена інформація від досвідчених мандрівників</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">💬</div>
+              <h3>Підтримка</h3>
+              <p>Завжди готові допомогти з плануванням вашої подорожі</p>
+            </div>
+          </div>
+          <div class="info-card" style="margin-top: 3rem; text-align: center">
+            <h3 style="margin-bottom: 1rem">Статистика</h3>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 2rem;
+                margin-top: 2rem;
+              "
+            >
+              <div>
+                <div
+                  style="
+                    font-size: 2.5rem;
+                    font-weight: bold;
+                    color: var(--primary);
+                  "
+                >
+                  50+
+                </div>
+                <div style="color: #6b7280">Країн</div>
+              </div>
+              <div>
+                <div
+                  style="
+                    font-size: 2.5rem;
+                    font-weight: bold;
+                    color: var(--primary);
+                  "
+                >
+                  10K+
+                </div>
+                <div style="color: #6b7280">Користувачів</div>
+              </div>
+              <div>
+                <div
+                  style="
+                    font-size: 2.5rem;
+                    font-weight: bold;
+                    color: var(--primary);
+                  "
+                >
+                  25K+
+                </div>
+                <div style="color: #6b7280">Планів</div>
+              </div>
+              <div>
+                <div
+                  style="
+                    font-size: 2.5rem;
+                    font-weight: bold;
+                    color: var(--primary);
+                  "
+                >
+                  4.9/5
+                </div>
+                <div style="color: #6b7280">Рейтинг</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2>Зв'яжіться з нами</h2>
+          <p>Маєте питання? Ми завжди раді допомогти!</p>
+        </div>
+        <div class="contact-form">
+          <form id="contact-form">
+            <div class="form-group">
+              <label>Ваше ім'я</label>
+              <input type="text" placeholder="Іван Петренко" required />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="your@email.com" required />
+            </div>
+            <div class="form-group">
+              <label>Тема звернення</label>
+              <select required>
+                <option value="">-- Оберіть --</option>
+                <option value="question">Загальне питання</option>
+                <option value="support">Технічна підтримка</option>
+                <option value="feedback">Відгук</option>
+                <option value="partnership">Співпраця</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Повідомлення</label>
+              <textarea
+                rows="6"
+                placeholder="Опишіть ваше питання..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="submit-btn">
+              Надіслати повідомлення
+            </button>
+          </form>
+          <div style="margin-top: 3rem; text-align: center">
+            <h3 style="margin-bottom: 1rem">Інші способи зв'язку</h3>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1rem;
+                margin-top: 1.5rem;
+              "
+            >
+              <div class="info-card">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem">📧</div>
+                <div style="font-weight: bold">Email</div>
+                <div style="color: #6b7280">info@travelhub.com</div>
+              </div>
+              <div class="info-card">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem">📱</div>
+                <div style="font-weight: bold">Телефон</div>
+                <div style="color: #6b7280">+380 (50) 123-45-67</div>
+              </div>
+              <div class="info-card">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem">💬</div>
+                <div style="font-weight: bold">Онлайн чат</div>
+                <div style="color: #6b7280">24/7 підтримка</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>🌍 TravelHub</h3>
+          <p style="color: #9ca3af; margin-top: 1rem">
+            Ваш надійний помічник у плануванні незабутніх подорожей по всьому
+            світу.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link">📘</a>
+            <a href="#" class="social-link">📷</a>
+            <a href="#" class="social-link">🐦</a>
+            <a href="#" class="social-link">📺</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Навігація</h3>
+          <ul style="margin-top: 1rem">
+            <li style="margin-bottom: 0.5rem">
+              <a href="#" onclick="showSection('home')">Головна</a>
+            </li>
+            <li style="margin-bottom: 0.5rem">
+              <a href="#" onclick="showSection('destinations')">Напрямки</a>
+            </li>
+            <li style="margin-bottom: 0.5rem">
+              <a href="#" onclick="showSection('planner')">Планувальник</a>
+            </li>
+            <li style="margin-bottom: 0.5rem">
+              <a href="#" onclick="showSection('my-plans')">Мої плани</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Інформація</h3>
+          <ul style="margin-top: 1rem">
+            <li style="margin-bottom: 0.5rem">
+              <a href="#" onclick="showSection('about')">Про нас</a>
+            </li>
+            <li style="margin-bottom: 0.5rem">
+              <a href="#" onclick="showSection('contact')">Контакти</a>
+            </li>
+            <li style="margin-bottom: 0.5rem"><a href="#">Блог</a></li>
+            <li style="margin-bottom: 0.5rem"><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Підписка</h3>
+          <p style="color: #9ca3af; margin-top: 1rem">
+            Отримуйте новини та спеціальні пропозиції
+          </p>
+          <div style="margin-top: 1rem">
+            <input
+              type="email"
+              placeholder="Ваш email"
+              style="
+                width: 100%;
+                padding: 0.8rem;
+                border: none;
+                border-radius: 8px;
+                margin-bottom: 0.5rem;
+              "
+            />
+            <button
+              style="
+                width: 100%;
+                padding: 0.8rem;
+                background: var(--gradient-1);
+                color: white;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                font-weight: bold;
+              "
+            >
+              Підписатись
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          text-align: center;
+          margin-top: 3rem;
+          padding-top: 2rem;
+          border-top: 1px solid #374151;
+          color: #9ca3af;
+        "
+      >
+        © 2025 TravelHub. Всі права захищені.
+      </div>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
